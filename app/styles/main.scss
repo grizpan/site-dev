@@ -1,0 +1,95 @@
+//
+// Main sass file, to import all styles
+//
+
+@import 'reset';
+
+@import 'bourbon/_bourbon.scss'; // http://bourbon.io/
+
+@import 'variables'; // colors, fonts etc...
+
+@import "fonts";
+
+@import 'mixins'; // custom mixins
+
+@import 'layout'; // responsive grid and media queries
+
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+
+*, *::after, *::before {
+	@include box-sizing(border-box);
+}
+
+html {
+	font-size: 62.5%;
+	overflow-x: hidden;
+
+	* {
+		-webkit-font-smoothing: antialiased;
+  		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+body {
+	font: {
+		size: 1.6rem;
+		family: $primary-font; // variables inside partials > _variables.scss
+	}
+	color: #000;
+	//background-color: $color-1;
+}
+
+@include MQ(L) {
+	body, html {
+		overflow-x: hidden;
+	}
+}
+
+a {
+	color: $color-2;
+	text-decoration: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+
+
+/* --------------------------------
+
+Modules - reusable parts of our design
+
+-------------------------------- */
+
+@import "_components/_header.scss";
+@import "_components/_skills.scss";
+@import "_components/_works.scss";
+
+
+.letter-capt {
+  float: right;
+  position: relative;
+  font-size: 4rem;
+  line-height: .7;
+  font-family: $ultra;
+  text-align: center;
+
+	&::after {
+      content: "";
+      position: absolute;
+      width: 36px;
+      height: 10px;
+      background: $colorBlue;
+      left: 50%;
+      margin-left: -18px;
+      bottom: -10px;
+	}
+}
+
+.grey { color: $colorGrey;}
+.thin { font-weight: 300;}
