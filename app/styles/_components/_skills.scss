@@ -9,9 +9,9 @@
   & * { box-sizing: border-box;}
 
   &__photo-wrap {
-
     position: absolute;
-    width: 50%;
+    top: 0;
+    width: 45%;
     height: 50vh;
     padding: 0;
     left: 0;
@@ -28,7 +28,7 @@
 
   &__wrap {
 
-    width: 50%;
+    width: 55%;
     float: right;
     padding: 5% 0 0;
     overflow: hidden;
