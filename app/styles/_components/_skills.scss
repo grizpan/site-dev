@@ -10,18 +10,17 @@
 
   &__photo-wrap {
     position: absolute;
-    top: 0;
     width: 45%;
     height: 50vh;
     padding: 0;
     left: 0;
     transition: top .1s, bottom .2s;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    text-align: center;
+    top: 1px;
 
     img {
       height: 100%;
+      display: inline-block;
     }
 
   }
