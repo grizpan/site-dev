@@ -115,16 +115,20 @@ Modules - reusable parts of our design
   opacity: 0;
   transition: opacity ease 700ms;
 
+  polygon {
+    transition: all ease 200ms;
+  }
   svg {
     cursor: pointer;
     overflow: visible;
 
     polyline {
       transform: translate(0,0);
-      transition: transform ease .2s;
+      transition: all ease .2s;
     }
     &:hover polyline {
       transform: translate(5px,5px);
     }
   }
 }
+

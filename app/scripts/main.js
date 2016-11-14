@@ -265,6 +265,19 @@
     //   }
     // }
 
+    // WORK STORY TRIGGER
+    var storyBtnArr = document.getElementsByClassName('svg-plus-container');
+    for( var i = 0; i < storyBtnArr.length; i++){
+      storyBtnArr[i].addEventListener('click', toggleStoryView);
+    }
+    function toggleStoryView(e) {
+      e.preventDefault();
+      var wrapperId = e.currentTarget.dataset.for;
+      var wrapper = document.getElementById(wrapperId);
+      wrapper.classList.toggle('with-story');
+    }
+
+
   })();
 
 })();
