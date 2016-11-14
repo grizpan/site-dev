@@ -11,8 +11,8 @@
   h1,h2,h3 {
     text-transform: uppercase;
   }
-  &>h1,
-  &>h3 {
+  & h1,
+  & h3 {
     font-family: $secondary-font;
     display: block;
     position: absolute;
@@ -30,7 +30,7 @@
       position: relative;
     }
   }
-  &>h3 {
+  & h3 {
     position: absolute;
     font-size: 1.4rem;
     line-height: .85;
@@ -43,7 +43,7 @@
       top: -17px;
     }
   }
-  &>h1 {
+  & h1 {
     position: absolute;
     bottom: 20%;
     font-size: 3rem;

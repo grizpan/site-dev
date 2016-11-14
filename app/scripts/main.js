@@ -126,47 +126,6 @@
       return e.split("").reverse().join("")
     }
 
-// SKILLS
-    var skills = document.getElementById('skills');
-    var skillsImgWrap = document.getElementById('skillsImgWrap');
-    var skillsImg = document.getElementById('skillsImg');
-
-    var firstSrc = skillsImg.dataset.src1;
-    var secSrc = skillsImg.dataset.src2;
-    var thirdSrc = skillsImg.dataset.src3;
-
-    //window.addEventListener('scroll', onScroll);
-    function onScroll() {
-      var fixedStart = ( skills.getBoundingClientRect().top + pageYOffset - skillsImgWrap.offsetHeight );
-      var fixedFinish = ( skills.getBoundingClientRect().bottom + pageYOffset - document.documentElement.clientHeight );
-      var firstPoint = fixedStart + ( fixedFinish - fixedStart )/3;
-      var secPoint = fixedStart + 2*( fixedFinish - fixedStart )/3;
-
-
-      if( pageYOffset > fixedStart && pageYOffset < fixedFinish ){
-        skillsImgWrap.style.position = "fixed";
-        skillsImgWrap.style.top = "auto";
-        skillsImgWrap.style.bottom = 0;
-        watchImg(firstPoint, secPoint);
-      }else if( pageYOffset < fixedStart ){
-        skillsImgWrap.style.position = "";
-        skillsImgWrap.style.top = 0;
-        skillsImgWrap.style.bottom = "auto";
-      }else if( pageYOffset > fixedFinish ){
-        skillsImgWrap.style.position = "";
-        skillsImgWrap.style.top = "auto";
-        skillsImgWrap.style.bottom = 0;
-      }
-    }
-    function watchImg(firstPoint, secPoint) {
-      if( pageYOffset < firstPoint ){
-        skillsImg.src = firstSrc;
-      }else if( pageYOffset < secPoint ){
-        skillsImg.src = secSrc;
-      }else{
-        skillsImg.src = thirdSrc;
-      }
-    }
   }
 
 
@@ -189,11 +148,20 @@
         thirdImg.src = skillsImg.dataset.src_3;
 
 
+    var prevScroll;
+
     window.onScrolling = function (height, scrollTop) {
       var worksTop = (works.getBoundingClientRect().top + scrollTop);
 
       if (scrollTop >= worksTop) {
         worksInfo.style.position = "fixed";
+
+        if( scrollTop > prevScroll ){
+          console.log("positive");
+        }else{
+          console.log("negative");
+        }
+        prevScroll = scrollTop;
       }else{
         worksInfo.style.position = "";
       }
@@ -218,8 +186,8 @@
         photoWrap.style.bottom = "-1px";
       }
     };
-    onScrolling(0, pageYOffset);
-    trigger.attach(onScrolling);
+    //onScrolling(0, pageYOffset);
+    //trigger.attach(onScrolling);
 
 
     function watchImg(firstPoint, secPoint, scrollTop) {
@@ -231,6 +199,71 @@
         skillsImg.src = thirdImg.src;
       }
     }
+
+    (function() {
+      $('#fullpage').fullpage({
+        normalScrollElements: '#skillsWrap',
+
+        onLeave: function(index, nextIndex, direction){
+          var info = document.getElementById('worksInfo');
+          if( nextIndex >= 3 ){
+            info.classList.remove('works__info__for-' + (index - 3));
+            info.classList.add('works__info__for-' + (nextIndex - 3));
+          }
+        },
+        // afterLoad: function (anchorLink, index) {
+        //   if( index == 2 ){
+        //     $.fn.fullpage.setAllowScrolling(false);
+        //     $.fn.fullpage.setKeyboardScrolling(false);
+        //
+        //     if (skills.addEventListener) {
+        //       if ('onwheel' in document) {
+        //         // IE9+, FF17+, Ch31+
+        //         skills.addEventListener("wheel", onCvWheel);
+        //       } else if ('onmousewheel' in document) {
+        //         // устаревший вариант события
+        //         skills.addEventListener("mousewheel", onCvWheel);
+        //       } else {
+        //         // Firefox < 17
+        //         skills.addEventListener("MozMousePixelScroll", onCvWheel);
+        //       }
+        //     }
+        //   }else{
+        //     $.fn.fullpage.setAllowScrolling(true);
+        //     $.fn.fullpage.setKeyboardScrolling(true);
+        //     skills.removeEventListener("MozMousePixelScroll", onCvWheel);
+        //   }
+        // }
+      });
+    })();
+
+    // var cv = document.getElementById('skillsWrap');
+    // var cvWheel = 0;
+    // var cvScrHeight = cv.scrollHeight;
+    // var cvHeight = cv.offsetHeight;
+    // var deltaMax = cvScrHeight - cvHeight;
+    // console.log(cvScrHeight, cvHeight);
+    //
+    //
+    // window.addEventListener('resize', windowResize);
+    // function windowResize() {
+    //   cvHeight = cv.scrollHeight;
+    //   cvHeight = cv.offsetHeight;
+    // }
+    //
+    // function onCvWheel(e) {
+    //   cvWheel += e.deltaY;
+    //
+    //   if( cvWheel >= 0 && cvWheel <= deltaMax ) {
+    //     cv.style.transform = 'translateY(-' + cvWheel + 'px)';
+    //   }else if(cvWheel < 0){
+    //     cv.style.transform = 'translateY(0)';
+    //     $.fn.fullpage.moveSectionUp();
+    //   }else{
+    //     cv.style.transform = 'translateY(-' + deltaMax + 'px)';
+    //     $.fn.fullpage.moveSectionDown();
+    //   }
+    // }
 
   })();
 

@@ -27,6 +27,7 @@ Primary style
 html {
 	font-size: 62.5%;
 	overflow-x: hidden;
+  box-sizing: content-box;
 
 	* {
 		-webkit-font-smoothing: antialiased;
@@ -69,7 +70,7 @@ Modules - reusable parts of our design
 @import "_components/_header.scss";
 @import "_components/_skills.scss";
 @import "_components/_works.scss";
-
+@import "_components/fullpage.min.css";
 
 .letter-capt {
   float: right;
@@ -100,6 +101,9 @@ Modules - reusable parts of our design
   display: table;
 }
 
+.active .svg-plus-container {
+  opacity: 1;
+}
 .svg-plus-container {
   width: 10vw;
   height: 10vw;
@@ -108,6 +112,8 @@ Modules - reusable parts of our design
   right: 4.2vw;
   z-index: 50;
   overflow: visible;
+  opacity: 0;
+  transition: opacity ease 700ms;
 
   svg {
     cursor: pointer;
