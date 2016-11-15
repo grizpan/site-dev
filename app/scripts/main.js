@@ -206,10 +206,23 @@
       $('#fullpage').fullpage({
 
         onLeave: function(index, nextIndex, direction){
-          if( nextIndex >= 2 && nextIndex <= 6){
-            info.classList.remove('works__info__for-' + (index - 2));
-            info.classList.add('works__info__for-' + (nextIndex - 2));
-          }
+          info.classList.remove('works__info__for-' + (index - 2));
+          info.classList.add('works__info__for-' + (nextIndex - 2));
+          var headingSec = document.getElementById('sectionHeading');
+
+          setTimeout( function() {
+            if (nextIndex > 2 && nextIndex < 7) {
+              headingSec.innerText = "Projects";
+              headingSec.style.marginLeft = "-70px";
+            } else if (nextIndex <= 2) {
+              headingSec.innerText = "Resume";
+              headingSec.style.marginLeft = "";
+            } else if (nextIndex >= 7) {
+              headingSec.innerText = "";
+              headingSec.style.marginLeft = "";
+            }
+          }, 200);
+
         }
       });
     })();
@@ -235,6 +248,49 @@
       $.fn.fullpage.setKeyboardScrolling(isStory);
     }
 
+    // IMG WATCHER
+
+    var skillsWrap = document.getElementById('skillsWrap');
+    var skillsImg = document.getElementById('skillsImg');
+    var srcNotArr = skillsImg.dataset;
+    var srcArr = [];
+    var k = 0;
+    for( var key in srcNotArr){
+      srcArr[k] = srcNotArr[key];
+      k++;
+    }
+    var imgArr = [];
+    imgArr[0] = new Image();
+    imgArr[0].src = srcArr[0];
+    for( var j = 1; j < srcArr.length; j++){
+      imgArr[j] = new Image();
+      imgArr[j].src = srcArr[j];
+    }
+
+    skillsWrap.addEventListener('scroll', scrollSkills);
+    function scrollSkills(e){
+      var maxScroll = skillsWrap.scrollHeight - skillsWrap.offsetHeight;
+      var curScroll = skillsWrap.scrollTop;
+      var period = maxScroll/srcArr.length;
+      var step = curScroll/period >> 0;
+      if(imgArr[step]) {
+        skillsImg.src = imgArr[step].src;
+      }
+    }
+
+    var navigation = document.getElementById('navigation');
+    navigation.addEventListener('click', navClick);
+    function navClick(e){
+      var target = e.target;
+
+      while (target != navigation) {
+        if ( target.classList.contains('nav_item') ) {
+          $.fn.fullpage.moveTo( (+target.dataset.goTo+1) );
+          return;
+        }
+        target = target.parentNode;
+      }
+    }
 
   })();
 
