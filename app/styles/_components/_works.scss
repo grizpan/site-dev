@@ -5,7 +5,7 @@
   transition: transform ease 600ms;
 
   &.with-story {
-    transform: translateX(-45%);
+    transform: translateX(-55%);
   }
 
   &__info {
@@ -15,11 +15,24 @@
     position: absolute;
     left: 0;
     top: 0;
-    background: #f3f4f5;
 
     transform: translate3d(0, 0, 0);
     transition: all 700ms ease;
 
+    &::before {
+      content: "mp.";
+      position: absolute;
+      display: block;
+      width: 16%;
+      background: $colorBlue;
+      color: #FFF;
+      font-family: $ultra;
+      font-size: 2rem;
+      line-height: 0.3;
+      text-align: center;
+      padding-top: 18vh;
+      height: 23.5vh;
+    }
 
     @for $i from 0 through 7 {
       &__for-#{$i} {
@@ -35,11 +48,55 @@
         }
       }
     }
+
+    &__nav {
+      height: 100vh;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 2px;
+      background: #e4e9fd;
+
+      .nav_item {
+        position: absolute;
+        height: (100vh / 7);
+      }
+
+      &_name {
+        color: #14228d;
+        font-family: $regular;
+        font-size: 2rem;
+        height: 100%;
+        position: absolute;
+        right: 25px;
+
+        display: flex;
+        align-items: center;
+      }
+      &_num {
+        color: #bcbcbc;
+        font-family: $regular;
+        font-size: 2rem;
+        height: 100%;
+        position: absolute;
+        left: 5px;
+
+        display: flex;
+        align-items: center;
+      }
+
+      @for $i from 0 through 6 {
+        &_#{$i} {
+          top: (100vh / 7) * $i;
+        }
+      }
+    }
+
   }
 
   &__promo {
 
-    width: 55%;
+    width: 45%;
     float: right;
 
   }
@@ -49,9 +106,17 @@
 .with-story {
   .work {
 
-    img {
+    &__img-wrap {
       transform: rotateX(0deg) rotateZ(0deg) rotateY(0deg) translateX(0%) translateY(0%) scale(1);
     }
+  }
+
+  .works__promo {
+    width: 45%;
+  }
+
+  .svg-plus-container {
+    transform: rotate(-405deg);
   }
 }
 
@@ -61,17 +126,38 @@
   width: 100%;
   position: relative;
 
-  img {
+  &__img-wrap {
+
     height: 100%;
     width: 100%;
     position: relative;
     z-index: 10;
-    box-shadow: -20px 20px 15px rgba(88,88,88,.1);
-    border: 1px solid rgba(88, 88, 88, 0.1);
+    box-shadow: -20px 20px 15px rgba(88, 88, 88, .1);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    background: #f3f4f5;
 
     transform-style: preserve-3d;
-    transform: rotateX(-45deg) rotateZ(-45deg) rotateY(-10deg) translateX(10%) translateY(10%) scale(.8);
+    transform: rotateX(-45deg) rotateZ(-45deg) rotateY(-10deg) translateX(0) translateY(0) scale(.8);
     transition: transform ease 0.6s;
+
+    &.center-top {
+      align-items: flex-start;
+    }
+    &.right-bottom {
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+    &.center {
+      align-items: center;
+    }
+
+    img {
+
+    }
   }
 
   //MASKS
@@ -101,44 +187,44 @@
   }
 
   &__names-mask {
-    top: calc(50% - 6.6rem);
+    top: calc(50% - 12rem);
     position: absolute;
-    left: 20%;
-    height: 5rem;
+    left: 16%;
+    height: 10rem;
     overflow: hidden;
 
     li {
       text-transform: uppercase;
-      font-family: $ultra;
-      font-size: 5rem;
+      font-family: $times;
+      font-size: 6rem;
       color: $colorBlue;
       font-weight: bold;
-      height: 5rem;
-      line-height: 5rem;
+      height: 10rem;
+      line-height: 10rem;
       white-space: nowrap;
     }
   }
   &__dates-mask {
-    top: calc(50% - 1.6rem);
+    top: calc(50% - 2rem);
     position: absolute;
-    left: 20%;
-    height: 1.6rem;
+    left: 16%;
+    height: 2rem;
     overflow: hidden;
 
     li {
       text-transform: lowercase;
       font-family: $regular;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       color: #636363;
-      height: 1.6rem;
-      line-height: 1.6rem;
+      height: 2rem;
+      line-height: 2rem;
       white-space: nowrap;
     }
   }
   &__types-mask {
     top: calc(45% + 12rem);
     position: absolute;
-    left: 20%;
+    left: 16%;
     height: 1.8rem + 2rem;
     overflow: hidden;
 
@@ -166,14 +252,14 @@
   &__role-mask {
     top: calc(45% + 25rem);
     position: absolute;
-    left: 20%;
+    left: 16%;
     height: 1.8rem;
     overflow: hidden;
 
     li {
       text-transform: uppercase;
       font-family: $regular;
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       color: $colorBlue;
       height: 1.8rem;
       line-height: 1.8rem;
@@ -187,9 +273,87 @@
 
   height: 100vh;
   position: absolute;
-  width: 45%;
+  width: 55%;
   top: 0;
-  right: -45%;
+  right: -55%;
+
+  &-after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 23.5vh;
+    padding-top: 14vh;
+    background: $colorBlue;
+    width: 13.5%;
+    text-align: center;
+    color: #FFF;
+    font-size: 5rem;
+    font-family: $times;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  &-format {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 14vh 13.5%;
+  }
+
+  &-name {
+    font-size: 5rem;
+    font-family: $times;
+    font-weight: bold;
+    color: $colorBlue;
+    text-transform: uppercase;
+    margin-bottom: 15vh;
+  }
+  &-date {
+    font-size: 1.6rem;
+    font-family: $regular;
+    color: #636363;
+    margin-bottom: 3vh;
+    display: block;
+    width: 100%;
+  }
+
+  h3 {
+    height: 10rem;
+    line-height: 10rem;
+    font-family: $bold;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    border-bottom: 5px solid $colorBlue;
+    margin-bottom: 7rem;
+  }
+
+  p {
+    font-family: $regular;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 4rem;
+  }
+
+  ul {
+    margin-bottom: 4rem;
+  }
+
+  li {
+    font-family: $regular;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    position: relative;
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .black {
+    font-family: $bold;
+  }
+  .blue {
+    color: $colorBlue;
+  }
 
 }
 

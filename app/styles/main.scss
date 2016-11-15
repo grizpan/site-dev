@@ -113,7 +113,8 @@ Modules - reusable parts of our design
   z-index: 50;
   overflow: visible;
   opacity: 0;
-  transition: opacity ease 700ms;
+  transform: rotate(0deg);
+  transition: opacity ease 700ms, transform ease 400ms 600ms;
 
   polygon {
     transition: all ease 200ms;

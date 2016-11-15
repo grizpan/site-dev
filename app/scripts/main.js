@@ -132,138 +132,87 @@
 
   // WORKS & SCROLL
   (function () {
-    var trigger = new ScrollTrigger();
+    //var trigger = new ScrollTrigger();
 
-    var works = document.getElementById('works');
-    var worksInfo = document.getElementById('worksInfo');
+    //var works = document.getElementById('works');
+    //var worksInfo = document.getElementById('worksInfo');
 
-    var skills = document.getElementById('skills');
-    var photoWrap = document.getElementById('skillsImgWrap');
-    var skillsImg = document.getElementById('skillsImg');
-    var firstImg = new Image();
-        firstImg.src = skillsImg.dataset.src_1;
-    var secImg = new Image();
-        secImg.src = skillsImg.dataset.src_2;
-    var thirdImg = new Image();
-        thirdImg.src = skillsImg.dataset.src_3;
+    //var skills = document.getElementById('skills');
+    //var photoWrap = document.getElementById('skillsImgWrap');
+    //var skillsImg = document.getElementById('skillsImg');
+    //var firstImg = new Image();
+    //    firstImg.src = skillsImg.dataset.src_1;
+    //var secImg = new Image();
+    //    secImg.src = skillsImg.dataset.src_2;
+    //var thirdImg = new Image();
+    //    thirdImg.src = skillsImg.dataset.src_3;
 
 
-    var prevScroll;
-
-    window.onScrolling = function (height, scrollTop) {
-      var worksTop = (works.getBoundingClientRect().top + scrollTop);
-
-      if (scrollTop >= worksTop) {
-        worksInfo.style.position = "fixed";
-
-        if( scrollTop > prevScroll ){
-          console.log("positive");
-        }else{
-          console.log("negative");
-        }
-        prevScroll = scrollTop;
-      }else{
-        worksInfo.style.position = "";
-      }
-
-      var fixedStart = ( skills.getBoundingClientRect().top + scrollTop - photoWrap.offsetHeight );
-      var fixedFinish = ( skills.getBoundingClientRect().bottom + scrollTop - document.documentElement.clientHeight );
-      var firstPoint = fixedStart + ( fixedFinish - fixedStart )/3;
-      var secPoint = fixedStart + 2*( fixedFinish - fixedStart )/3;
-
-      if( scrollTop >= fixedStart && scrollTop <= fixedFinish ){
-        photoWrap.style.position = "fixed";
-        photoWrap.style.top = "auto";
-        photoWrap.style.bottom = "-1px";
-        watchImg(firstPoint, secPoint, scrollTop);
-      }else if( scrollTop < fixedStart ){
-        photoWrap.style.position = "";
-        photoWrap.style.top = "1px";
-        photoWrap.style.bottom = "auto";
-      }else if( scrollTop > fixedFinish ){
-        photoWrap.style.position = "";
-        photoWrap.style.top = "auto";
-        photoWrap.style.bottom = "-1px";
-      }
-    };
+    // var prevScroll;
+    //
+    // window.onScrolling = function (height, scrollTop) {
+    //   var worksTop = (works.getBoundingClientRect().top + scrollTop);
+    //
+    //   if (scrollTop >= worksTop) {
+    //     worksInfo.style.position = "fixed";
+    //
+    //     if( scrollTop > prevScroll ){
+    //       console.log("positive");
+    //     }else{
+    //       console.log("negative");
+    //     }
+    //     prevScroll = scrollTop;
+    //   }else{
+    //     worksInfo.style.position = "";
+    //   }
+    //
+    //   var fixedStart = ( skills.getBoundingClientRect().top + scrollTop - photoWrap.offsetHeight );
+    //   var fixedFinish = ( skills.getBoundingClientRect().bottom + scrollTop - document.documentElement.clientHeight );
+    //   var firstPoint = fixedStart + ( fixedFinish - fixedStart )/3;
+    //   var secPoint = fixedStart + 2*( fixedFinish - fixedStart )/3;
+    //
+    //   if( scrollTop >= fixedStart && scrollTop <= fixedFinish ){
+    //     photoWrap.style.position = "fixed";
+    //     photoWrap.style.top = "auto";
+    //     photoWrap.style.bottom = "-1px";
+    //     watchImg(firstPoint, secPoint, scrollTop);
+    //   }else if( scrollTop < fixedStart ){
+    //     photoWrap.style.position = "";
+    //     photoWrap.style.top = "1px";
+    //     photoWrap.style.bottom = "auto";
+    //   }else if( scrollTop > fixedFinish ){
+    //     photoWrap.style.position = "";
+    //     photoWrap.style.top = "auto";
+    //     photoWrap.style.bottom = "-1px";
+    //   }
+    // };
     //onScrolling(0, pageYOffset);
     //trigger.attach(onScrolling);
 
 
-    function watchImg(firstPoint, secPoint, scrollTop) {
-      if( scrollTop <= firstPoint ){
-        skillsImg.src = firstImg.src;
-      }else if( scrollTop <= secPoint ){
-        skillsImg.src = secImg.src;
-      }else{
-        skillsImg.src = thirdImg.src;
-      }
-    }
+    // function watchImg(firstPoint, secPoint, scrollTop) {
+    //   if( scrollTop <= firstPoint ){
+    //     skillsImg.src = firstImg.src;
+    //   }else if( scrollTop <= secPoint ){
+    //     skillsImg.src = secImg.src;
+    //   }else{
+    //     skillsImg.src = thirdImg.src;
+    //   }
+    // }
 
     (function() {
       $('#fullpage').fullpage({
-        normalScrollElements: '#skillsWrap',
 
         onLeave: function(index, nextIndex, direction){
           var info = document.getElementById('worksInfo');
-          if( nextIndex >= 3 ){
-            info.classList.remove('works__info__for-' + (index - 3));
-            info.classList.add('works__info__for-' + (nextIndex - 3));
+          if( nextIndex >= 2 && nextIndex <= 6){
+            info.classList.remove('works__info__for-' + (index - 2));
+            info.classList.add('works__info__for-' + (nextIndex - 2));
           }
-        },
-        // afterLoad: function (anchorLink, index) {
-        //   if( index == 2 ){
-        //     $.fn.fullpage.setAllowScrolling(false);
-        //     $.fn.fullpage.setKeyboardScrolling(false);
-        //
-        //     if (skills.addEventListener) {
-        //       if ('onwheel' in document) {
-        //         // IE9+, FF17+, Ch31+
-        //         skills.addEventListener("wheel", onCvWheel);
-        //       } else if ('onmousewheel' in document) {
-        //         // устаревший вариант события
-        //         skills.addEventListener("mousewheel", onCvWheel);
-        //       } else {
-        //         // Firefox < 17
-        //         skills.addEventListener("MozMousePixelScroll", onCvWheel);
-        //       }
-        //     }
-        //   }else{
-        //     $.fn.fullpage.setAllowScrolling(true);
-        //     $.fn.fullpage.setKeyboardScrolling(true);
-        //     skills.removeEventListener("MozMousePixelScroll", onCvWheel);
-        //   }
-        // }
+        }
       });
     })();
 
-    // var cv = document.getElementById('skillsWrap');
-    // var cvWheel = 0;
-    // var cvScrHeight = cv.scrollHeight;
-    // var cvHeight = cv.offsetHeight;
-    // var deltaMax = cvScrHeight - cvHeight;
-    // console.log(cvScrHeight, cvHeight);
-    //
-    //
-    // window.addEventListener('resize', windowResize);
-    // function windowResize() {
-    //   cvHeight = cv.scrollHeight;
-    //   cvHeight = cv.offsetHeight;
-    // }
-    //
-    // function onCvWheel(e) {
-    //   cvWheel += e.deltaY;
-    //
-    //   if( cvWheel >= 0 && cvWheel <= deltaMax ) {
-    //     cv.style.transform = 'translateY(-' + cvWheel + 'px)';
-    //   }else if(cvWheel < 0){
-    //     cv.style.transform = 'translateY(0)';
-    //     $.fn.fullpage.moveSectionUp();
-    //   }else{
-    //     cv.style.transform = 'translateY(-' + deltaMax + 'px)';
-    //     $.fn.fullpage.moveSectionDown();
-    //   }
-    // }
 
     // WORK STORY TRIGGER
     var storyBtnArr = document.getElementsByClassName('svg-plus-container');
@@ -275,6 +224,13 @@
       var wrapperId = e.currentTarget.dataset.for;
       var wrapper = document.getElementById(wrapperId);
       wrapper.classList.toggle('with-story');
+      toggleScrolling(wrapper);
+    }
+    function toggleScrolling(e) {
+      var isStory = !e.classList.contains('with-story');
+
+      $.fn.fullpage.setAllowScrolling(isStory);
+      $.fn.fullpage.setKeyboardScrolling(isStory);
     }
 
 
