@@ -200,11 +200,12 @@
     //   }
     // }
 
+    var info = document.getElementById('worksInfo');
+
     (function() {
       $('#fullpage').fullpage({
 
         onLeave: function(index, nextIndex, direction){
-          var info = document.getElementById('worksInfo');
           if( nextIndex >= 2 && nextIndex <= 6){
             info.classList.remove('works__info__for-' + (index - 2));
             info.classList.add('works__info__for-' + (nextIndex - 2));
@@ -224,6 +225,7 @@
       var wrapperId = e.currentTarget.dataset.for;
       var wrapper = document.getElementById(wrapperId);
       wrapper.classList.toggle('with-story');
+      info.classList.toggle('hide');
       toggleScrolling(wrapper);
     }
     function toggleScrolling(e) {
