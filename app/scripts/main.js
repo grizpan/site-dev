@@ -131,6 +131,21 @@
       return rand;
     }
 
+
+    var openContactsBtn = document.getElementById('contactsLink');
+    var flyingContactsWrap = document.getElementById('worksInfoContacts');
+    var menuLink = document.getElementById('menuLink');
+    var menuWrap = document.getElementById('navigation');
+
+    openContactsBtn.addEventListener('click', toggleContacts);
+    function toggleContacts(e){
+      flyingContactsWrap.classList.toggle('active');
+    }
+    menuLink.addEventListener('click', toggleMenu);
+    function toggleMenu(e){
+      menuWrap.classList.toggle('active');
+    }
+
   }
 
 

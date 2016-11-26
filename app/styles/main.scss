@@ -145,7 +145,7 @@ Modules - reusable parts of our design
   left: 16%;
   margin-left: -72px;
   top: 8.1vh;
-  text-shadow: 1px 1px 2px $colorBlue;
+  //text-shadow: 1px 1px 2px $colorBlue;
 
   &:first-letter {
     color: #f3f4f5;
@@ -180,7 +180,7 @@ Modules - reusable parts of our design
     width: 50%;
     height: 100vh;
     float: right;
-    padding: 10%;
+    padding: 5%;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -197,6 +197,10 @@ Modules - reusable parts of our design
       font-family: $ultra;
       margin-bottom: 25rem;
     }
+  }
+
+  &__contacts {
+
     h3 {
       font-size: 2rem;
       font-family: $ultra;
@@ -234,6 +238,13 @@ Modules - reusable parts of our design
           }
         }
 
+        &.stroke {
+          width: 40px;
+          float: left;
+          a {
+            width: 25px;
+          }
+        }
         &.thin {
           font-family: $regular;
           position: relative;
@@ -252,32 +263,10 @@ Modules - reusable parts of our design
         }
       }
     }
-
   }
+
 }
 
-
-.arrow {
-
-  width: 30px;
-  height: 4px;
-  position: absolute;
-
-  & div {
-    background: $colorBlue;
-    position: absolute;
-    border-radius: 1px;
-    width: 30px;
-    height: 4px;
-    transform-origin: left center;
-    transition: transform ease 400ms;
-
-    &.arrow__1 {
-      transform-origin: right center;
-    }
-
-  }
-}
 
 
 
