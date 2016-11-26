@@ -89,6 +89,8 @@
     var header = document.getElementById('header')
     var headerMain = document.getElementById('headerMain');
     var baffleIt = header.getElementsByClassName('baffle-it');
+    var timingFooterBuff = document.getElementById('timingFooterBuff');
+    var timingFooterHeadings = ['Contact', 'Hire', 'Follow'];
 
     setTimeout(function () {
       headerMain.classList.remove('state__init');
@@ -101,7 +103,33 @@
       header.getElementsByTagName('h3')[0].classList.remove('state__init');
     }, 3000);
 
+    setTimeout(function timingFooterBuff() {
+      footerBuff();
+      setTimeout(timingFooterBuff, randomInteger(5, 12)*1000);
+    }, randomInteger(5, 12)*1000);
 
+    function footerBuff() {
+
+      var b = baffle(timingFooterBuff);
+        b.start();
+        b.set({
+          characters: characters
+        });
+        b.text( function (txt){
+          var newHeadings = timingFooterHeadings.filter( function(heading){
+            return heading != txt;
+          });
+          var rand = randomInteger(0, newHeadings.length - 1);
+          return newHeadings[rand];
+        });
+        b.reveal(1000, 1000);
+    }
+
+    function randomInteger(min, max) {
+      var rand = min - 0.5 + Math.random() * (max - min + 1)
+      rand = Math.round(rand);
+      return rand;
+    }
 
   }
 
