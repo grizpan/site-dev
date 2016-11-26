@@ -145,28 +145,82 @@ Modules - reusable parts of our design
   left: 16%;
   margin-left: -72px;
   top: 8.1vh;
+  text-shadow: 1px 1px 2px $colorBlue;
 
   &:first-letter {
     color: #f3f4f5;
+    text-shadow: 1px 1px 2px #FFF;
   }
 }
 
 .footer {
+  background: #FFF;
+  height: 100%;
 
-    border: 10px solid $colorBlue;
-    text-align: center;
-    background: #FFF;
-
+  &__img {
+    width: 45%;
     height: 100%;
+    float: left;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: flex-end;
+    -ms-flex-align: end;
+    align-items: flex-end;
 
-    &::after {
-      content: "";
-      width: 10px;
-      height: 50px;
-      background: #000;
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      margin-left: -5px;
+    & img {
+      max-height: 80%;
     }
+  }
+
+  &__content {
+    width: 50%;
+    height: 100%;
+    float: right;
+    padding-top: 10%;
+
+    h2 {
+      font-size: 3rem;
+      font-family: $ultra;
+      margin-bottom: 25rem;
+    }
+    h3 {
+      font-size: 2rem;
+      font-family: $ultra;
+      margin-bottom: 5rem;
+      text-transform: uppercase;
+    }
+
+    ul {
+
+      svg {
+
+        &:hover {
+          fill: $colorBlue;
+        }
+      }
+    }
+
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

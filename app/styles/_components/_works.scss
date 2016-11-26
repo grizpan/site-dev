@@ -26,6 +26,7 @@
 
       .works__info__nav {
         opacity: 0;
+        transform: translateX(-100px);
       }
     }
 
@@ -39,7 +40,7 @@
       font-family: $ultra;
       font-size: 2rem;
       line-height: 0.3;
-      text-align: center;
+      padding-left: calc(16% - 67px);
       padding-top: 5vh;
       height: 20vh;
     }
@@ -100,22 +101,27 @@
           position: absolute;
           width: 4px;
           height: 4px;
-          border-radius: 50%;
+          border-radius: 2px;
           background: $colorBlue;
           top: 50%;
           left: 50%;
           margin-left: -2px;
           margin-top: -2px;
+
+          transition: width ease 500ms;
         }
 
         &:hover {
           .works__info__nav_name {
-            transform: translateX(-20px);
+            transform: translateX(-20px) scale(1);
             opacity: 1;
           }
           .works__info__nav_num {
             color: #14228D;
             transform: translateX(20px);
+          }
+          &:before {
+            width: 24px;
           }
         }
       }
@@ -139,14 +145,17 @@
       &_name {
         color: #14228d;
         font-family: $regular;
-        font-size: 2rem;
+        font-size: 1rem;
         height: 100%;
         position: absolute;
         right: 5px;
+        padding-right: 25px;
+        margin-right: -25px;
         opacity: 0;
         white-space: nowrap;
-        transform: translateX(0);
+        transform: translateX(0) scale(0);
         transition: all ease 400ms;
+        top: 1px;
 
         display: flex;
         align-items: center;
@@ -154,15 +163,16 @@
       &_num {
         color: #bcbcbc;
         font-family: $regular;
-        font-size: 2rem;
+        font-size: 1.2rem;
         height: 100%;
         position: absolute;
         left: 5px;
+        top: 1px;
         transform: translateX(0);
         transition: all ease 400ms;
 
-        padding-left: 50px;
-        margin-left: -50px;
+        padding-left: 25px;
+        margin-left: -25px;
 
         display: flex;
         align-items: center;
@@ -242,9 +252,9 @@
       position: absolute;
       width: 100%;
       text-align: center;
-      top: 20%;
+      top: 10%;
       font-family: $bold;
-      font-size: 2.3rem;
+      font-size: 3rem;
     }
 
     img {
@@ -263,23 +273,23 @@
       height: 100%;
       position: relative;
       transform: translateY(0);
-      transition: transform ease 200ms;
+      transition: transform ease 400ms;
     }
   }
   &__names-mask ul {
     transition-delay: 0ms;
   }
   &__dates-mask ul {
-    transition-delay: 200ms;
+    transition-delay: 100ms;
   }
   &__types-mask ul {
-    transition-delay: 400ms;
+    transition-delay: 200ms;
   }
   &__short-mask ul {
-    transition-delay: 400ms;
+    transition-delay: 200ms;
   }
   &__role-mask ul {
-    transition-delay: 700ms;
+    transition-delay: 500ms;
   }
 
   &__names-mask {
@@ -318,7 +328,7 @@
     }
   }
   &__types-mask {
-    top: calc(45% + 12rem);
+    top: calc(45% + 8rem);
     position: absolute;
     left: 16%;
     height: 1.8rem + 2rem;
@@ -346,7 +356,7 @@
     }
   }
   &__short-mask {
-    top: calc(45% + 17rem);
+    top: calc(45% + 12rem);
     position: absolute;
     left: 16%;
     height: auto;
@@ -366,7 +376,7 @@
     }
   }
   &__role-mask {
-    top: calc(45% + 25rem);
+    top: calc(45% + 15rem);
     position: absolute;
     left: 16%;
     height: 1.8rem;

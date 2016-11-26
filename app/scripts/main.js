@@ -102,29 +102,6 @@
     }, 3000);
 
 
-    var hireBtn = document.getElementById('hireBtn');
-    var b = baffle(hireBtn, {
-      characters: characters
-    });
-    b.text(reverseTxt);
-    hireBtn.addEventListener('mouseenter', enterHireBtn);
-    hireBtn.addEventListener('mouseleave', leaveHireBtn);
-
-    function enterHireBtn() {
-      event.preventDefault();
-      b.start();
-      b.text(reverseTxt);
-      b.reveal(500);
-    }
-    function leaveHireBtn() {
-      event.preventDefault();
-      b.start();
-      b.text(reverseTxt);
-      b.reveal(500);
-    }
-    function reverseTxt(e) {
-      return e.split("").reverse().join("")
-    }
 
   }
 
@@ -132,73 +109,7 @@
 
   // WORKS & SCROLL
   (function () {
-    //var trigger = new ScrollTrigger();
 
-    //var works = document.getElementById('works');
-    //var worksInfo = document.getElementById('worksInfo');
-
-    //var skills = document.getElementById('skills');
-    //var photoWrap = document.getElementById('skillsImgWrap');
-    //var skillsImg = document.getElementById('skillsImg');
-    //var firstImg = new Image();
-    //    firstImg.src = skillsImg.dataset.src_1;
-    //var secImg = new Image();
-    //    secImg.src = skillsImg.dataset.src_2;
-    //var thirdImg = new Image();
-    //    thirdImg.src = skillsImg.dataset.src_3;
-
-
-    // var prevScroll;
-    //
-    // window.onScrolling = function (height, scrollTop) {
-    //   var worksTop = (works.getBoundingClientRect().top + scrollTop);
-    //
-    //   if (scrollTop >= worksTop) {
-    //     worksInfo.style.position = "fixed";
-    //
-    //     if( scrollTop > prevScroll ){
-    //       console.log("positive");
-    //     }else{
-    //       console.log("negative");
-    //     }
-    //     prevScroll = scrollTop;
-    //   }else{
-    //     worksInfo.style.position = "";
-    //   }
-    //
-    //   var fixedStart = ( skills.getBoundingClientRect().top + scrollTop - photoWrap.offsetHeight );
-    //   var fixedFinish = ( skills.getBoundingClientRect().bottom + scrollTop - document.documentElement.clientHeight );
-    //   var firstPoint = fixedStart + ( fixedFinish - fixedStart )/3;
-    //   var secPoint = fixedStart + 2*( fixedFinish - fixedStart )/3;
-    //
-    //   if( scrollTop >= fixedStart && scrollTop <= fixedFinish ){
-    //     photoWrap.style.position = "fixed";
-    //     photoWrap.style.top = "auto";
-    //     photoWrap.style.bottom = "-1px";
-    //     watchImg(firstPoint, secPoint, scrollTop);
-    //   }else if( scrollTop < fixedStart ){
-    //     photoWrap.style.position = "";
-    //     photoWrap.style.top = "1px";
-    //     photoWrap.style.bottom = "auto";
-    //   }else if( scrollTop > fixedFinish ){
-    //     photoWrap.style.position = "";
-    //     photoWrap.style.top = "auto";
-    //     photoWrap.style.bottom = "-1px";
-    //   }
-    // };
-    //onScrolling(0, pageYOffset);
-    //trigger.attach(onScrolling);
-
-
-    // function watchImg(firstPoint, secPoint, scrollTop) {
-    //   if( scrollTop <= firstPoint ){
-    //     skillsImg.src = firstImg.src;
-    //   }else if( scrollTop <= secPoint ){
-    //     skillsImg.src = secImg.src;
-    //   }else{
-    //     skillsImg.src = thirdImg.src;
-    //   }
-    // }
 
     var info = document.getElementById('worksInfo');
 
