@@ -49,6 +49,10 @@
     font-size: 4rem;
     line-height: 1.1;
     z-index: 6;
+
+    @include MQ(mobile) {
+      bottom: 5%;
+    }
   }
 
   &__main {
@@ -66,6 +70,18 @@
 
     z-index: 5;
     transition: all 1.5s;
+
+    @include MQ(mobile) {
+      height: 100%;
+      top: 0;
+      left: 0;
+      width: 0;
+      border: 4px solid $colorBlue;
+
+      &#headerMain h2 {
+        left: 10px;
+      }
+    }
 
     &::after {
       content: "";
@@ -108,7 +124,31 @@
     height: 70vh;
     margin-top: 15vh;
 
+    @include MQ(mobile) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin-top: 0;
+      padding-top: 15vh;
+      padding-left: 40vw;
+    }
 
+    &__arrow-down {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      @include MQ(mobile) {
+        left: auto;
+        right: 0;
+      }
+
+      &:hover polyline {
+        transform: translate(15px, 10px) scale(.9);
+      }
+    }
     h2 {
       font-family: $ultra;
       font-size: 3.1rem;
@@ -124,6 +164,10 @@
       position: absolute;
       top: 35.4%;
       width: 100%;
+
+      @include MQ(mobile) {
+        top: 40vh;
+      }
 
       &::after {
         content: "";

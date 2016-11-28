@@ -29,6 +29,10 @@ html {
 	overflow-x: hidden;
   box-sizing: content-box;
 
+  @include MQ(M) {
+    font-size: 50%;
+  }
+
 	* {
 		-webkit-font-smoothing: antialiased;
   		-moz-osx-font-smoothing: grayscale;
@@ -44,11 +48,10 @@ body {
 	//background-color: $color-1;
 }
 
-@include MQ(L) {
-	body, html {
-		overflow-x: hidden;
-	}
+body, html {
+  overflow-x: hidden;
 }
+
 
 a {
 	color: $color-2;
@@ -57,6 +60,9 @@ a {
 
 img {
 	max-width: 100%;
+}
+
+@include MQ(M) {
 }
 
 
@@ -101,7 +107,7 @@ Modules - reusable parts of our design
   display: table;
 }
 
-.active .svg-plus-container {
+.active .work .svg-plus-container {
   opacity: 1;
 }
 .svg-plus-container {
@@ -111,29 +117,34 @@ Modules - reusable parts of our design
   top: 65%;
   margin-top: -5vw;
   left: 0;
-  z-index: 50;
+  z-index: 200;
   overflow: visible;
-  opacity: 0;
+  opacity: 1;
   transform: rotate(0deg);
   transition: opacity ease 700ms, transform ease 400ms 600ms;
 
+  @include MQ(mobile) {
+    display: none;
+  }
   polygon {
     transition: all ease 200ms;
   }
-  svg {
-    cursor: pointer;
-    overflow: visible;
+}
+.work .svg-plus-container {
+  opacity: 0;
+}
+svg {
+  cursor: pointer;
+  overflow: visible;
 
-    polyline {
-      transform: translate(0,0);
-      transition: all ease .2s;
-    }
-    &:hover polyline {
-      transform: translate(5px,5px);
-    }
+  polyline {
+    transform: translate(0,0);
+    transition: all ease .2s;
+  }
+  &:hover polyline {
+    transform: translate(5px,5px);
   }
 }
-
 
 .section__heading {
   font-family: $ultra;
@@ -145,17 +156,39 @@ Modules - reusable parts of our design
   left: 16%;
   margin-left: -72px;
   top: 8.1vh;
-  //text-shadow: 1px 1px 2px $colorBlue;
+
+
+  @include MQ(M) {
+    margin-left: -59px;
+  }
+  @include MQ(mobile) {
+    font-size: 7rem;
+    margin-left: -39px;
+  }
+  &.project {
+    margin-left: -70px;
+    @include MQ(M) {
+      margin-left: -57px;
+    }
+    @include MQ(mobile) {
+      margin-left: -39px;
+    }
+  }
 
   &:first-letter {
-    color: #f3f4f5;
-    text-shadow: 1px 1px 2px #FFF;
+    color: #FFF;
   }
 }
 
 .footer {
   background: #FFF;
   height: 100%;
+
+  @include MQ(mobile) {
+    height: 100vh;
+    width: 100vw;
+  }
+
 
   &__img {
     width: 45%;
@@ -171,8 +204,15 @@ Modules - reusable parts of our design
     -ms-flex-align: end;
     align-items: flex-end;
 
+    @include MQ(mobile) {
+      width: 100vw;
+    }
+
     & img {
       max-height: 80%;
+      @include MQ(mobile) {
+        max-height: 60%;
+      }
     }
   }
 
@@ -191,6 +231,12 @@ Modules - reusable parts of our design
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+
+    @include MQ(mobile) {
+      position: absolute;
+      width: 100%;
+      top: 20vh;
+    }
 
     h2 {
       font-size: 3rem;
@@ -267,6 +313,27 @@ Modules - reusable parts of our design
 
 }
 
+
+.fp-viewing-6 {
+  .works__info__contacts-link {
+    display: none;
+    @include MQ(mobile) {
+      display: block;
+    }
+  }
+  #mobileSeeStoryBtn {
+    display: none;
+  }
+  .works__info__arrows-down {
+    display: none;
+  }
+}
+
+@include MQ(mobile) {
+  .footer__content .footer__contacts {
+    display: none;
+  }
+}
 
 
 

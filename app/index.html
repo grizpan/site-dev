@@ -61,6 +61,17 @@
         <li><a href="skype:[mikhail_plahotya]?call">skype: mikhail_plahotya</a></li>
       </ul>
 
+      <div id="headerArrowDown" class="header__contacts__arrow-down">
+        <svg width="70px" height="70px" viewBox="0 0 100 100">
+          <polyline
+            points="0,40 50,100 100,40 70,40 70,2 30,2 30,40 0,40"
+            stroke-width="2"
+            style="stroke:#022eed; fill: none" ></polyline>
+          <polygon
+            points="0,40 50,100 100,40 70,40 70,0 30,0 30,40"
+            fill="#022eed" ></polygon>
+        </svg>
+      </div>
     </div>
 
   </header>
@@ -75,7 +86,7 @@
         <h2>Now I'm open to suggestions.</h2>
 
         <div class="footer__contacts">
-          <h3><span>Contact</span> me</h3>
+          <h3><span id="timingContactBuff">Contact</span> me</h3>
           <ul>
             <li class="grey thin">Kharkov. Ukraine</li>
 
@@ -226,34 +237,62 @@
 
       <div id="sectionHeading" class="section__heading">Resume</div>
 
-      <div id="navigation" class="works__info__nav active">
+      <div id="navigation" class="works__info__nav">
         <div data-go-to="0" class="works__info__nav_0 nav_item">
           <div class="works__info__nav_name">Start</div>
           <div class="works__info__nav_num">00</div>
+          <div class="works__info__nav_menu-text">
+            <h4>Start : </h4>
+            <span>here is the introduction</span>
+          </div>
         </div>
         <div data-go-to="1" class="works__info__nav_1 nav_item">
           <div class="works__info__nav_name">Resume</div>
           <div class="works__info__nav_num">01</div>
+          <div class="works__info__nav_menu-text">
+            <h4>Resume : </h4>
+            <span>my skills and experience</span>
+          </div>
         </div>
         <div data-go-to="2" class="works__info__nav_2 nav_item">
           <div class="works__info__nav_name">Pradex</div>
           <div class="works__info__nav_num">02</div>
+          <div class="works__info__nav_menu-text">
+            <h4>Pradex : </h4>
+            <span>Really cool furniture! Made in UA.</span>
+          </div>
         </div>
         <div data-go-to="3" class="works__info__nav_3 nav_item">
           <div class="works__info__nav_name">Pradex-light</div>
           <div class="works__info__nav_num">03</div>
+          <div class="works__info__nav_menu-text">
+            <h4>Pradex-light : </h4>
+            <span>... and awesome lighting</span>
+          </div>
         </div>
         <div data-go-to="4" class="works__info__nav_4 nav_item">
           <div class="works__info__nav_name">Mr. Grey's</div>
           <div class="works__info__nav_num">04</div>
+          <div class="works__info__nav_menu-text">
+            <h4>Mr. Grey's : </h4>
+            <span>Shaving accessories online shop</span>
+          </div>
         </div>
         <div data-go-to="5" class="works__info__nav_5 nav_item">
           <div class="works__info__nav_name">NashaBelka.ru</div>
           <div class="works__info__nav_num">05</div>
+          <div class="works__info__nav_menu-text">
+            <h4>NashaBelka.ru : </h4>
+            <span>Cleaning service website. And my first project!</span>
+          </div>
         </div>
         <div data-go-to="6" class="works__info__nav_6 nav_item">
           <div class="works__info__nav_name">Finish</div>
           <div class="works__info__nav_num">0X</div>
+          <div class="works__info__nav_menu-text">
+            <h4>Finish : </h4>
+            <span>Here is my photo and thanks for the visit</span>
+          </div>
         </div>
       </div>
       <div id="menuLink" class="works__info__menu-link">
@@ -270,8 +309,28 @@
       </div>
 
       <div class="works__info__arrows">
-        <div id="arrowUp" class="works__info__arrow-up"></div>
-        <div id="arrowDown" class="works__info__arrow-down"></div>
+        <div id="arrowUp" class="works__info__arrows-up">
+          <svg width="40px" height="40px" viewBox="0 0 100 100">
+            <polyline
+              points="0,60 50,0 100,60 70,60 70,100 30,100 30,60 0,60"
+              stroke-width="2"
+              style="stroke:#022eed; fill: none" ></polyline>
+            <polygon
+              points="0,60 50,0 100,60 70,60 70,100 30,100 30,60"
+              fill="#022eed" ></polygon>
+          </svg>
+        </div>
+        <div id="arrowDown" class="works__info__arrows-down">
+          <svg width="40px" height="40px" viewBox="0 0 100 100">
+            <polyline
+              points="0,40 50,100 100,40 70,40 70,2 30,2 30,40 0,40"
+              stroke-width="2"
+              style="stroke:#022eed; fill: none" ></polyline>
+            <polygon
+              points="0,40 50,100 100,40 70,40 70,0 30,0 30,40"
+              fill="#022eed" ></polygon>
+          </svg>
+        </div>
       </div>
 
       <div class="work__names-mask">
@@ -310,6 +369,19 @@
           <li>Full-stack</li>
         </ul>
       </div>
+
+      <div id="mobileSeeStoryBtn" data-for="workWrap_0" class="svg-plus-container">
+        <svg width="100%" height="100%" viewBox="0 0 107 107">
+          <polyline
+            points="0,38.46 38.46,38.46 38.46,0 61.54,0 61.54,38.46 98,38.46 98,61.54 61.54,61.54 61.54,98 38.46,98 38.46,61.54 0,61.54 0,38.46"
+            stroke-width="1"
+            style="stroke:#022eed; fill: none" ></polyline>
+          <polygon
+            points="0,38.46 38.46,38.46 38.46,0 61.54,0 61.54,38.46 98,38.46 98,61.54 61.54,61.54 61.54,98 38.46,98 38.46,61.54 0,61.54 0,38.46 0,38.46"
+            fill="#022eed" ></polygon>
+        </svg>
+      </div>
+
     </div>
 
     <div class="works__promo">
