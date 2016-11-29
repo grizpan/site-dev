@@ -119,6 +119,7 @@ Modules - reusable parts of our design
   opacity: 1;
   transform: rotate(0deg);
   transition: opacity ease 700ms, transform ease 400ms 600ms;
+  cursor: pointer;
 
   @include MQ(mobile) {
     display: none;

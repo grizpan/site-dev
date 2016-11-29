@@ -135,18 +135,11 @@
 
     var openContactsBtn = document.getElementById('contactsLink');
     var flyingContactsWrap = document.getElementById('worksInfoContacts');
-    var menuLink = document.getElementById('menuLink');
-    var menuWrap = document.getElementById('navigation');
 
     openContactsBtn.addEventListener('click', toggleContacts);
     function toggleContacts(e){
       flyingContactsWrap.classList.toggle('active');
       menuWrap.classList.remove('active');
-    }
-    menuLink.addEventListener('click', toggleMenu);
-    function toggleMenu(e){
-      menuWrap.classList.toggle('active');
-      flyingContactsWrap.classList.remove('active');
     }
 
   }
@@ -165,7 +158,6 @@
         onLeave: function(index, nextIndex, direction){
           var headingSec = document.getElementById('sectionHeading');
           var flyingContactsWrap = document.getElementById('worksInfoContacts');
-          var menuWrap = document.getElementById('navigation');
           var mobileSeeStoryBtn = document.getElementById('mobileSeeStoryBtn');
           var newMobileSeeStoryBtnFor = mobileSeeStoryBtn.dataset.for.slice(0, 9) + (+nextIndex-2);
 
@@ -189,7 +181,6 @@
 
           setTimeout( function() {
             flyingContactsWrap.classList.remove('active');
-            menuWrap.classList.remove('active');
           }, 700);
 
         },
