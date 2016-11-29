@@ -167,10 +167,10 @@
           var flyingContactsWrap = document.getElementById('worksInfoContacts');
           var menuWrap = document.getElementById('navigation');
           var mobileSeeStoryBtn = document.getElementById('mobileSeeStoryBtn');
-          var newMobileSeeStoryBtnFor = mobileSeeStoryBtn.dataset.for.slice(0, -1) + (nextIndex-2);
+          var newMobileSeeStoryBtnFor = mobileSeeStoryBtn.dataset.for.slice(0, 9) + (+nextIndex-2);
 
-          info.classList.remove('works__info__for-' + (index - 2));
-          info.classList.add('works__info__for-' + (nextIndex - 2));
+          info.classList.remove('works__info__for-' + (+index - 2));
+          info.classList.add('works__info__for-' + (+nextIndex - 2));
 
           mobileSeeStoryBtn.setAttribute('data-for', newMobileSeeStoryBtnFor);
 
@@ -196,19 +196,6 @@
 
       });
 
-      // ARROWS
-      var arrowUp = document.getElementById('arrowUp');
-      var arrowDown = document.getElementById('arrowDown');
-      var headerArrowDown = document.getElementById('headerArrowDown');
-      arrowUp.addEventListener('click', function () {
-        $.fn.fullpage.moveSectionUp();
-      });
-      arrowDown.addEventListener('click', function () {
-        $.fn.fullpage.moveSectionDown();
-      });
-      headerArrowDown.addEventListener('click', function () {
-        $.fn.fullpage.moveSectionDown();
-      });
 
       // WORK STORY TRIGGER
       var storyBtnArr = document.getElementsByClassName('svg-plus-container');
@@ -250,34 +237,34 @@
 
 
     // IMG WATCHER
-
-    var skillsWrap = document.getElementById('skillsWrap');
-    var skillsImg = document.getElementById('skillsImg');
-    var srcNotArr = skillsImg.dataset;
-    var srcArr = [];
-    var k = 0;
-    for( var key in srcNotArr){
-      srcArr[k] = srcNotArr[key];
-      k++;
-    }
-    var imgArr = [];
-    imgArr[0] = new Image();
-    imgArr[0].src = srcArr[0];
-    for( var j = 1; j < srcArr.length; j++){
-      imgArr[j] = new Image();
-      imgArr[j].src = srcArr[j];
-    }
-
-    skillsWrap.addEventListener('scroll', scrollSkills);
-    function scrollSkills(e){
-      var maxScroll = skillsWrap.scrollHeight - skillsWrap.offsetHeight;
-      var curScroll = skillsWrap.scrollTop;
-      var period = maxScroll/srcArr.length;
-      var step = curScroll/period >> 0;
-      if(imgArr[step]) {
-        skillsImg.src = imgArr[step].src;
-      }
-    }
+    //
+    // var skillsWrap = document.getElementById('skillsWrap');
+    // var skillsImg = document.getElementById('skillsImg');
+    // var srcNotArr = skillsImg.dataset;
+    // var srcArr = [];
+    // var k = 0;
+    // for( var key in srcNotArr){
+    //   srcArr[k] = srcNotArr[key];
+    //   k++;
+    // }
+    // var imgArr = [];
+    // imgArr[0] = new Image();
+    // imgArr[0].src = srcArr[0];
+    // for( var j = 1; j < srcArr.length; j++){
+    //   imgArr[j] = new Image();
+    //   imgArr[j].src = srcArr[j];
+    // }
+    //
+    // skillsWrap.addEventListener('scroll', scrollSkills);
+    // function scrollSkills(e){
+    //   var maxScroll = skillsWrap.scrollHeight - skillsWrap.offsetHeight;
+    //   var curScroll = skillsWrap.scrollTop;
+    //   var period = maxScroll/srcArr.length;
+    //   var step = curScroll/period >> 0;
+    //   if(imgArr[step]) {
+    //     skillsImg.src = imgArr[step].src;
+    //   }
+    // }
 
 
   })();

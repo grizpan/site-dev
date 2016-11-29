@@ -45,7 +45,7 @@
   }
   & h1 {
     position: absolute;
-    bottom: 20%;
+    bottom: 20vh;
     font-size: 4rem;
     line-height: 1.1;
     z-index: 6;
@@ -119,10 +119,13 @@
   &__contacts {
     position: relative;
     float: right;
-    width: 30%;
-    margin-right: 5%;
-    height: 70vh;
-    margin-top: 15vh;
+    width: 50%;
+    margin-right: 0;
+    padding: 23.4vh 3%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     @include MQ(mobile) {
       position: absolute;
@@ -153,20 +156,47 @@
       font-family: $ultra;
       font-size: 3.1rem;
       font-weight: bold;
+      position: relative;
+      top: calc(30% + 8px);
 
-      .letter-capt {
-        line-height: 1;
+      @include MQ(mobile) {
+        top: 0;
       }
     }
 
     &-list {
 
-      position: absolute;
-      top: 35.4%;
+      position: relative;
       width: 100%;
 
       @include MQ(mobile) {
-        top: 40vh;
+        top: -2vh;
+      }
+
+      p {
+        margin-bottom: 15px;
+        font-family: $regular;
+        font-size: 1.4rem;
+        position: relative;
+        width: 100%;
+        line-height: 1.4;
+
+        &:first-child {
+          font-size: 1.6rem;
+          font-family: $bold;
+          margin-bottom: 30px;
+
+          &::after {
+            content: "";
+            display: block;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            height: 4px;
+            background: $colorBlue;
+          }
+        }
       }
 
       &::after {
@@ -176,8 +206,11 @@
         height: 8px;
         width: 36px;
         left: 0;
-        bottom: -10px;
+        bottom: -18px;
         background: $colorBlue;
+        @include MQ(mobile) {
+          display: none;
+        }
       }
 
       li {
