@@ -356,71 +356,86 @@
   }
 }
 
-.header__bubbles-wrap[data-focus="1"] {
-  .bubble {
-    &__2 {
-      filter: blur(0);
-    }
-    &__1 {
-      filter: blur(4px);
-    }
-    &__3 {
-      filter: blur(8px);
-    }
-    &__4 {
-      filter: blur(12px);
-    }
-  }
-}
-.header__bubbles-wrap[data-focus="2"] {
-  .bubble {
-    &__2 {
-      filter: blur(4px);
-    }
-    &__1 {
-      filter: blur(0);
-    }
-    &__3 {
-      filter: blur(4px);
-    }
-    &__4 {
-      filter: blur(8px);
-    }
-  }
-}
-.header__bubbles-wrap[data-focus="3"] {
-  .bubble {
-    &__2 {
-      filter: blur(8px);
-    }
-    &__1 {
-      filter: blur(4px);
-    }
-    &__3 {
-      filter: blur(0);
-    }
-    &__4 {
-      filter: blur(4px);
-    }
-  }
-}
-.header__bubbles-wrap[data-focus="4"] {
-  .bubble {
-    &__2 {
-      filter: blur(12px);
-    }
-    &__1 {
-      filter: blur(8px);
-    }
-    &__3 {
-      filter: blur(4px);
-    }
-    &__4 {
-      filter: blur(0);
-    }
-  }
-}
-
+//.header__bubbles-wrap[data-focus="1"] {
+//  .bubble {
+//    &__2 {
+//      filter: blur(0);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0')
+//    }
+//    &__1 {
+//      filter: blur(4px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+//    }
+//    &__3 {
+//      filter: blur(8px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
+//    }
+//    &__4 {
+//      filter: blur(12px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='1.2')
+//    }
+//  }
+//}
+//.header__bubbles-wrap[data-focus="2"] {
+//  .bubble {
+//    &__2 {
+//      filter: blur(4px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+//    }
+//    &__1 {
+//      filter: blur(0);
+//    }
+//    &__3 {
+//      filter: blur(4px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+//    }
+//    &__4 {
+//      filter: blur(8px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
+//    }
+//  }
+//}
+//.header__bubbles-wrap[data-focus="3"] {
+//  .bubble {
+//    &__2 {
+//      filter: blur(8px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
+//    }
+//    &__1 {
+//      filter: blur(4px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+//    }
+//    &__3 {
+//      filter: blur(0);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0')
+//    }
+//    &__4 {
+//      filter: blur(4px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+//    }
+//  }
+//}
+//.header__bubbles-wrap[data-focus="4"] {
+//  .bubble {
+//    &__2 {
+//      filter: blur(12px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='1.2')
+//    }
+//    &__1 {
+//      filter: blur(8px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
+//    }
+//    &__3 {
+//      filter: blur(4px);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+//    }
+//    &__4 {
+//      filter: blur(0);
+//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0')
+//    }
+//  }
+//}
+//
 
 
 
