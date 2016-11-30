@@ -25,7 +25,7 @@
     &::after {
       content: "";
       display: inline-block;
-      height: 5px;
+      height: 8px;
       width: 36px;
       background: $colorBlue;
       position: relative;
@@ -58,7 +58,7 @@
 
   &__main {
 
-    border: 5px solid $colorBlue;
+    border: 8px solid $colorBlue;
     position: absolute;
     text-align: center;
     background: #FFF;
@@ -87,7 +87,7 @@
 
     &::after {
       content: "";
-      width: 5px;
+      width: 8px;
       height: 50px;
       background: #000;
       position: absolute;
@@ -161,7 +161,7 @@
       font-size: 3.1rem;
       font-weight: bold;
       position: relative;
-      top: calc(30% + 5px);
+      top: calc(30% + 8px);
 
       @include MQ(mobile) {
         top: 0;
@@ -207,7 +207,7 @@
         content: "";
         position: absolute;
         display: block;
-        height: 5px;
+        height: 8px;
         width: 36px;
         left: 0;
         bottom: -18px;
