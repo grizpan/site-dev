@@ -58,6 +58,9 @@
       .works__info__nav {
         opacity: 0;
         transform: translateX(-100px);
+        @include MQ(mobile) {
+          transform: none;
+        }
       }
     }
 
@@ -434,7 +437,9 @@
           height: 30vh;
           position: absolute;
           top: 0;
-          transform: rotateX(-45deg) rotateZ(-45deg) rotateY(-10deg) translateX(-20vh) translateY(20vh) scale(.8);
+
+          transform: rotateX(0deg) rotateZ(0deg) rotateY(0deg) translateX(100vw) translateY(0) scale(1);
+          box-shadow: 0 0 0 rgba(88, 88, 88, 0);
         }
 
         height: 100%;
@@ -455,6 +460,7 @@
       transform: rotateX(0deg) rotateZ(0deg) rotateY(0deg) translateX(0%) translateY(0%) scale(1);
       @include MQ(mobile) {
         transform: rotateX(0deg) rotateZ(0deg) rotateY(0deg) translateX(100vw) translateY(0) scale(1);
+        box-shadow: 0 0 0 rgba(88, 88, 88, 0);
       }
 
     }
@@ -497,7 +503,7 @@
 
     transform-style: preserve-3d;
     transform: rotateX(-45deg) rotateZ(-45deg) rotateY(-10deg) translateX(0) translateY(0) scale(.8);
-    transition: transform ease 0.6s;
+    transition: transform ease 0.6s, box-shadow ease .6s;
 
     @include MQ(mobile) {
       height: 30vh;
@@ -608,7 +614,7 @@
       font-family: $bold;
       font-size: 1.8rem;
       height: 1.8rem + 2rem;
-      line-height: 1.8rem;
+      line-height: 2.8rem;
       white-space: nowrap;
       position: relative;
 
