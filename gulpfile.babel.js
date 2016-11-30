@@ -255,6 +255,15 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
   });
 });
 
+gulp.task('deploy', ['default'], () => {
+  return gulp.src('dist/**/*')
+    .pipe($.ghPages({
+      remoteUrl: "https://github.com/grizpan/grizpan.github.io.git",
+      branch: "master",
+      force: true,
+    }));
+});
+
 // Load custom tasks from the `tasks` directory
 // Run: `npm install --save-dev require-dir` from the command-line
 // try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
