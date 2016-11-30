@@ -56,8 +56,14 @@ gulp.task('images', () =>
     .pipe($.size({title: 'images'}))
 );
 
+gulp.task('fonts', () =>
+  gulp.src('app/fonts/**/*')
+    .pipe(gulp.dest('dist/fonts'))
+    .pipe($.size({title: 'fonts'}))
+);
+
 // Copy all files at the root level (app)
-gulp.task('copy', () =>
+gulp.task('copy', ['fonts'], () =>
   gulp.src([
     'app/*',
     '!app/*.html',
@@ -88,7 +94,7 @@ gulp.task('styles', () => {
     'app/styles/**/*.css'
   ])
     .pipe($.newer('.tmp/styles'))
-    .pipe($.sourcemaps.init())
+    //.pipe($.sourcemaps.init())
     .pipe($.sass({
       precision: 10
     }).on('error', $.sass.logError))
@@ -97,7 +103,7 @@ gulp.task('styles', () => {
     // Concatenate and minify styles
     .pipe($.if('*.css', $.cssnano()))
     .pipe($.size({title: 'styles'}))
-    .pipe($.sourcemaps.write('./'))
+    //.pipe($.sourcemaps.write('./'))
     .pipe(gulp.dest('dist/styles'));
 });
 
@@ -113,15 +119,15 @@ gulp.task('scripts', () =>
       // Other scripts
     ])
       .pipe($.newer('.tmp/scripts'))
-      .pipe($.sourcemaps.init())
+      //.pipe($.sourcemaps.init())
       .pipe($.babel())
-      .pipe($.sourcemaps.write())
+      //.pipe($.sourcemaps.write())
       .pipe(gulp.dest('.tmp/scripts'))
       .pipe($.concat('main.min.js'))
       .pipe($.uglify({preserveComments: 'some'}))
       // Output files
       .pipe($.size({title: 'scripts'}))
-      .pipe($.sourcemaps.write('.'))
+      //.pipe($.sourcemaps.write('.'))
       .pipe(gulp.dest('dist/scripts'))
 );
 

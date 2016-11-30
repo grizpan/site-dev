@@ -567,7 +567,7 @@
   }
 
   &__names-mask {
-    top: calc(50% - 12rem);
+    top: calc(50% - 5rem);
     position: absolute;
     left: 16%;
     height: 10rem;
@@ -587,7 +587,7 @@
     }
   }
   &__dates-mask {
-    top: calc(50% - 2rem);
+    top: calc(50% + 3rem);
     position: absolute;
     left: 16%;
     height: 2rem;
@@ -604,7 +604,7 @@
     }
   }
   &__types-mask {
-    top: calc(45% + 8rem);
+    top: calc(45% + 13rem);
     position: absolute;
     left: 16%;
     height: 1.8rem + 2rem;
@@ -623,7 +623,7 @@
         display: block;
         position: absolute;
         width: 4rem;
-        height: .8rem;
+        height: .5rem;
         background: #000;
         bottom: 3px;
         left: 0;
@@ -631,7 +631,7 @@
     }
   }
   &__short-mask {
-    top: calc(45% + 12rem);
+    top: calc(45% + 13rem);
     position: absolute;
     left: 16%;
     height: auto;
@@ -651,7 +651,7 @@
     }
   }
   &__role-mask {
-    top: calc(45% + 15rem);
+    top: calc(45% + 20rem);
     position: absolute;
     left: 16%;
     height: 1.8rem;

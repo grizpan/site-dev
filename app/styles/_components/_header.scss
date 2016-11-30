@@ -25,7 +25,7 @@
     &::after {
       content: "";
       display: inline-block;
-      height: 8px;
+      height: 5px;
       width: 36px;
       background: $colorBlue;
       position: relative;
@@ -58,7 +58,7 @@
 
   &__main {
 
-    border: 8px solid $colorBlue;
+    border: 5px solid $colorBlue;
     position: absolute;
     text-align: center;
     background: #FFF;
@@ -87,13 +87,16 @@
 
     &::after {
       content: "";
-      width: 8px;
+      width: 5px;
       height: 50px;
       background: #000;
       position: absolute;
       bottom: 0;
       left: 50%;
       margin-left: -5px;
+      @include MQ(mobile) {
+        background: $colorBlue;
+      }
     }
 
     &.state__init {
@@ -158,7 +161,7 @@
       font-size: 3.1rem;
       font-weight: bold;
       position: relative;
-      top: calc(30% + 8px);
+      top: calc(30% + 5px);
 
       @include MQ(mobile) {
         top: 0;
@@ -204,7 +207,7 @@
         content: "";
         position: absolute;
         display: block;
-        height: 8px;
+        height: 5px;
         width: 36px;
         left: 0;
         bottom: -18px;
@@ -289,6 +292,7 @@
   border-radius: 100%;
   background: linear-gradient(162deg, #022eed, #01030b);
   transition: transform ease 1500ms, filter ease 300ms;
+  box-shadow: 10px 10px 50px rgba(1, 20, 99, 0.5);
 
   &__1 {
     left: 45%;
