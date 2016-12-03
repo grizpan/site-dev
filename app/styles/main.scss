@@ -316,7 +316,8 @@ svg {
 }
 
 
-.fp-viewing-6 {
+.fp-viewing-6,
+.fp-viewing-13{
   .works__info__contacts-link {
     display: none;
     @include MQ(mobile) {

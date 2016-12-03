@@ -291,7 +291,7 @@
   top: 100%;
   border-radius: 100%;
   background: linear-gradient(162deg, #022eed, #01030b);
-  transition: transform ease 1500ms, filter ease 300ms;
+  transition: transform ease 1500ms, filter ease 500ms;
   box-shadow: 10px 10px 50px rgba(1, 20, 99, 0.5);
 
   &__1 {
@@ -356,86 +356,86 @@
   }
 }
 
-//.header__bubbles-wrap[data-focus="1"] {
-//  .bubble {
-//    &__2 {
-//      filter: blur(0);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0')
-//    }
-//    &__1 {
-//      filter: blur(4px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
-//    }
-//    &__3 {
-//      filter: blur(8px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
-//    }
-//    &__4 {
-//      filter: blur(12px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='1.2')
-//    }
-//  }
-//}
-//.header__bubbles-wrap[data-focus="2"] {
-//  .bubble {
-//    &__2 {
-//      filter: blur(4px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
-//    }
-//    &__1 {
-//      filter: blur(0);
-//    }
-//    &__3 {
-//      filter: blur(4px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
-//    }
-//    &__4 {
-//      filter: blur(8px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
-//    }
-//  }
-//}
-//.header__bubbles-wrap[data-focus="3"] {
-//  .bubble {
-//    &__2 {
-//      filter: blur(8px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
-//    }
-//    &__1 {
-//      filter: blur(4px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
-//    }
-//    &__3 {
-//      filter: blur(0);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0')
-//    }
-//    &__4 {
-//      filter: blur(4px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
-//    }
-//  }
-//}
-//.header__bubbles-wrap[data-focus="4"] {
-//  .bubble {
-//    &__2 {
-//      filter: blur(12px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='1.2')
-//    }
-//    &__1 {
-//      filter: blur(8px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
-//    }
-//    &__3 {
-//      filter: blur(4px);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
-//    }
-//    &__4 {
-//      filter: blur(0);
-//      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0')
-//    }
-//  }
-//}
-//
+.header__bubbles-wrap[data-focus="1"] {
+  .bubble {
+    &__2 {
+      filter: blur(0);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0')
+    }
+    &__1 {
+      filter: blur(4px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+    }
+    &__3 {
+      filter: blur(8px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
+    }
+    &__4 {
+      filter: blur(12px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='1.2')
+    }
+  }
+}
+.header__bubbles-wrap[data-focus="2"] {
+  .bubble {
+    &__2 {
+      filter: blur(4px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+    }
+    &__1 {
+      filter: blur(0);
+    }
+    &__3 {
+      filter: blur(4px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+    }
+    &__4 {
+      filter: blur(8px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
+    }
+  }
+}
+.header__bubbles-wrap[data-focus="3"] {
+  .bubble {
+    &__2 {
+      filter: blur(8px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
+    }
+    &__1 {
+      filter: blur(4px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+    }
+    &__3 {
+      filter: blur(0);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0')
+    }
+    &__4 {
+      filter: blur(4px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+    }
+  }
+}
+.header__bubbles-wrap[data-focus="4"] {
+  .bubble {
+    &__2 {
+      filter: blur(12px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='1.2')
+    }
+    &__1 {
+      filter: blur(8px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.8')
+    }
+    &__3 {
+      filter: blur(4px);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='.4')
+    }
+    &__4 {
+      filter: blur(0);
+      filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0')
+    }
+  }
+}
+
 
 
 
